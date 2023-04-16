@@ -33,3 +33,21 @@
 
 
 import './styles/style.css'
+import baseElement from './templay/base.hbs'
+import {base,list,frameworks, libs} from './data/hbsData.js'
+let baseExport =baseElement(base)
+console.log(baseExport)
+const container=document.querySelector('#root')
+container.insertAdjacentHTML('beforeend',baseExport)
+import listElements from './templay/list.hbs'
+let listExport=listElements(list)
+console.log(listExport)
+container.insertAdjacentHTML('beforeend',listExport)
+import frameworksElements from './templay/frameworks.hbs'
+let frameworksExport=frameworksElements(frameworks)
+console.log(frameworksExport)
+container.insertAdjacentHTML('beforeend',frameworksExport)
+import libsElements from './templay/libs.hbs'
+let libsExport=libsElements(libs)
+console.log(libsExport)
+container.insertAdjacentHTML('beforeend',libsExport)
